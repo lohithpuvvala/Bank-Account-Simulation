@@ -18,12 +18,20 @@ public class Main {
 
             switch (choice){
                 case 1: //Deposit
+                    System.out.println("Enter amount to deposit: ");
+                    double amountToDeposit = in.nextDouble();
+                    savingsAccount.deposit(amountToDeposit);
                     break;
                 case 2: //Withdraw
+                    System.out.println("Enter amount to withdraw: ");
+                    double amountToWithdraw = in.nextDouble();
+                    savingsAccount.withdraw(amountToWithdraw);
                     break;
                 case 3://check balance
+                    System.out.println("Current Balance: ₹"+savingsAccount.getBalance());
                     break;
                 case 4://Print Transaction History
+                    savingsAccount.printTransactionsHistory();
                     break;
                 default:
                     System.out.println("Invalid choice!");
@@ -31,6 +39,7 @@ public class Main {
 
             System.out.println("Do you want to continue? (y/n)");
             if(in.next().equalsIgnoreCase("n")){
+                System.out.println("Thank You! Exiting...");
                 break;
             }
         }
